@@ -1,0 +1,33 @@
+
+<div class="container">
+<hello name="{{ name }}"></hello>
+<div> 
+  <div> <input type="checkbox" [(ngModel)]="gender"  value="Male" (change)="sort('Male')">
+    Male  <input type="checkbox"  (change)="sort('Female')"value="Female" />
+    Female</div>
+<div>
+<input type="text"[(ngModel)]="searchBox" />&nbsp;&nbsp;<input type="button" value="search by first_name" (click)="sortByElement(searchBox)">
+</div>
+</div>
+<table class="table table-striped border mt-1">
+<thead>
+    <tr>
+    <th scope="col"> Id</th>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Age</th>
+    <th scope="col">Email</th>
+    <th scope="col">Gender</th>
+</tr>
+</thead>
+<tbody>
+    <tr *ngFor="let data of dataList">
+       <td>{{data.id}}</td> 
+       <td>{{data.first_name}}</td>
+       <td>{{data.last_name}}</td>
+       <td>{{data.email}}</td>
+       <td>{{data.gender}}</td>
+    </tr>
+</tbody>
+</table>
+</div>
+
